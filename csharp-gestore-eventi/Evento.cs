@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace csharp_gestore_eventi
 {
-    internal class Evento
+    public class Evento
     {
         public string Titolo {  get; set; }
         public DateTime Data {  get; set; }
@@ -27,7 +27,6 @@ namespace csharp_gestore_eventi
             Titolo = titolo;
             Data = data;
             Capienza = capienza;
-            PostiPrenotati = 0;
         }
 
         public void PrenotaPosti(int postiAggiunti)
