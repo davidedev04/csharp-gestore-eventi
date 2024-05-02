@@ -27,7 +27,6 @@
             Console.WriteLine();
             Console.WriteLine($"Numero di posti prenotati = {evento.PostiPrenotati}");
             Console.WriteLine($"Numero di posti disponibili = {evento.Capienza - evento.PostiPrenotati}");
-            Console.WriteLine();
             evento.DisdiciPosti();
         }
     }
