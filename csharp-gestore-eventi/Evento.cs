@@ -35,10 +35,25 @@ namespace csharp_gestore_eventi
             int sum = PostiPrenotati + postiAggiunti;
         }
 
-        public void DisdiciPosti(int postiDisdetti)
+        public void DisdiciPosti()
         {
+            int postiDisdetti = 0;
             Console.WriteLine("Vuoi disdire dei posti (si/no)? ");
-            int sum = PostiPrenotati - postiDisdetti;
+            var yesNo = Console.ReadLine();
+            if (yesNo == "si")
+            {
+                Console.WriteLine("Indica il numero di posti da disdire: ");
+                postiDisdetti = Convert.ToInt32(Console.ReadLine());
+            } else if (yesNo =="no")
+            {
+                Console.WriteLine("Ok va bene!");
+            }
+            
+            int sumPrenotati = PostiPrenotati - postiDisdetti;
+            int sumDisponibili = Capienza - PostiPrenotati + postiDisdetti;
+            Console.WriteLine($"Numero di posti prenotati = {sumPrenotati}");
+            Console.WriteLine($"Numero di posti disponibili = {sumDisponibili}");
+
         }
 
         public override string ToString()
