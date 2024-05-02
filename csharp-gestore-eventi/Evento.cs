@@ -15,8 +15,37 @@ namespace csharp_gestore_eventi
         public int PostiPrenotati {  get; set; }
 
         public Evento() 
+        { 
+            Titolo = string.Empty;
+            Data = DateTime.MinValue;
+            Capienza = 0;
+            PostiPrenotati = 0;
+        }
+
+        public Evento(string titolo, DateTime data, int capienza) 
         {
-            
+            Titolo = titolo;
+            Data = data;
+            Capienza = capienza;
+            PostiPrenotati = 0;
+        }
+
+        public void PrenotaPosti(int postiAggiunti)
+        {
+            int sum = PostiPrenotati + postiAggiunti;
+        }
+
+        public void DisdiciPosti(int postiDisdetti)
+        {
+            Console.WriteLine("Vuoi disdire dei posti (si/no)? ");
+            int sum = PostiPrenotati - postiDisdetti;
+        }
+
+        public override string ToString()
+        {
+            Data.ToString("dd/MM/yyyy");
+            Console.WriteLine($"{Data} - {Titolo}");
+            return base.ToString();
         }
 
     }
